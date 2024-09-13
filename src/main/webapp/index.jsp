@@ -49,23 +49,25 @@
 </style>
 </head>
 <body>
+<c:set var="context" value="${pageContext.request.contextPath }"></c:set>
+
 <c:if test="${sessionScope.memId == null }">
     <div class="container">
         <h2>메인화면</h2>
-        <h3><a href="/memberMVC/member/memberWriteForm.do">회원가입</a></h3>
-        <h3><a href="/memberMVC/member/memberLogInForm.do">로그인</a></h3>
-        <!-- <h3><a href="/memberMVC/board/boardList.do?pg=1">글목록</a></h3> -->
+        <h3><a href="${context }/member/memberWriteForm.do">회원가입</a></h3>
+        <h3><a href="${context }/member/memberLogInForm.do">로그인</a></h3>
+        <!-- <h3><a href="${context }/board/boardList.do?pg=1">글목록</a></h3> -->
     </div>
 </c:if>
 
 <c:if test="${sessionScope.memId != null }">
     <div class="container">
         <h2>메인화면</h2>
-        <h3><a href="/memberMVC/member/memberUpdateForm.do">회원정보수정</a></h3>
-        <h3><a href="/memberMVC/member/memberLogOut.do">로그아웃</a></h3>
-        <!-- <h3><a href="/memberMVC/board/boardWriteForm.do">글쓰기</a></h3>
-        <h3><a href="/memberMVC/board/boardList.jsp?pg=1">글목록</a></h3> -->
-        <h3><a href="/memberMVC/member/memberDeleteForm.do">회원탈퇴</a></h3>
+        <h3><a href="${context }/member/memberUpdateForm.do">회원정보수정</a></h3>
+        <h3><a href="${context }/member/memberLogOut.do">로그아웃</a></h3>
+        <!-- <h3><a href="${context }/board/boardWriteForm.do">글쓰기</a></h3>
+        <h3><a href="${context }/board/boardList.jsp?pg=1">글목록</a></h3> -->
+        <h3><a href="${context }/member/memberDeleteForm.do">회원탈퇴</a></h3>
     </div>
 </c:if>
 

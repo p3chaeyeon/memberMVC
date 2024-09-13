@@ -121,7 +121,7 @@ button:hover {
 </head>
 <body>
 <div id="delete-jsp">
-	<a href="/memberMVC/index.do"><img src="../image/buang.jpg" width="130" height="140" alt="부아앙 망곰" /></a>
+	<a href="${pageContext.request.contextPath }/index.do"><img src="../image/buang.jpg" width="130" height="140" alt="부아앙 망곰" /></a>
 	<h2>회원탈퇴</h2>
 	<form name="memberDeleteForm">
 		<table>
@@ -207,7 +207,7 @@ $(document).ready(function() {
 	        // AJAX 요청
 	        $.ajax({
 	            type: 'POST',
-	            url: '/memberMVC/member/memberDelete.do',
+	            url: '${pageContext.request.contextPath }/member/memberDelete.do',
 	            data: {
 	                'id': $('#id').val(),
 	                'pwd': $('#pwd').val()
@@ -218,7 +218,7 @@ $(document).ready(function() {
 	                	alert("회원탈퇴 실패하였습니다.");
 	                } else {
 	                	alert("회원탈퇴되었습니다.");
-	                	location.href='/memberMVC/index.do';
+	                	location.href='${pageContext.request.contextPath }/index.do';
 	                }
 	            },
 	            error: function(xhr, status, error) {

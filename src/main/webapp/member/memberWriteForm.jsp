@@ -108,9 +108,9 @@ button:hover {
 </head>
 <body>
 <div id="write-jsp">
-	<a href="/memberMVC/index.do"><img src="../image/mangom3.png" width="140" height="140" alt="mangom" /></a>
+	<a href="${pageContext.request.contextPath }/index.do"><img src="../image/mangom3.png" width="140" height="140" alt="mangom" /></a>
 	<h2>회원가입</h2>
-	<form name="memberWriteForm" onsubmit="return memberWrite()" action="/memberMVC/member/memberWrite.do" method="post">
+	<form name="memberWriteForm" onsubmit="return memberWrite()" action="${pageContext.request.contextPath }/member/memberWrite.do" method="post">
 		<table>
 			<tr>
 		        <th class="label">이름</th>

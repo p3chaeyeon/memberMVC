@@ -128,7 +128,7 @@ button:hover {
 </head>
 <body>
 <div id="update-jsp">
-	<a href="/memberMVC/index.do"><img src="../image/mangom3.png" width="140" height="140" alt="mangom" /></a>
+	<a href="${pageContext.request.contextPath }/index.do"><img src="../image/mangom3.png" width="140" height="140" alt="mangom" /></a>
 	<h2>회원정보수정</h2>
 	<form name="memberUpdateForm" onsubmit="return memberUpdate()">
 		<table>
@@ -238,17 +238,17 @@ $(document).ready(function() {
 	
 	        $.ajax({
 	            type: 'post',
-	            url: '/memberMVC/member/memberUpdate.do',
+	            url: '${pageContext.request.contextPath }/member/memberUpdate.do',
 	            data: $('form[name="memberUpdateForm"]').serialize(),
 	            success: function(data) {
 	                console.log("서버 응답:", data);
-	                let response = data.trim();
+	                let result = data.trim();
 	                
-	                if (response === "fail") {
+	                if (result === "fail") {
 	                    alert("회원정보 수정에 실패하였습니다.");
 	                } else {
 	                    alert("회원정보가 수정되었습니다.");
-	                    location.href='/memberMVC/index.do';
+	                    location.href='${pageContext.request.contextPath }/index.do';
 	                }
 	            },
 	            error: function(xhr, status, error) {

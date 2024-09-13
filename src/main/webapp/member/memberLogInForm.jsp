@@ -86,7 +86,7 @@ button:hover {
 </head>
 <body>
 <div id="login-jsp">
-	<a href="/memberMVC/index.do"><img src="../image/mangom2.jpg" width="150" height="150" alt="mangom" /></a>
+	<a href="${pageContext.request.contextPath }/index.do"><img src="../image/mangom2.jpg" width="150" height="150" alt="mangom" /></a>
 	<h2>로그인</h2>
 	<form name="memberLogInForm">
 		<table>
@@ -139,7 +139,7 @@ $(document).ready(function() {
         if (isValid) {
         	$.ajax({
         		type: 'post',
-        		url: '/memberMVC/member/memberLogIn.do',
+        		url: '${pageContext.request.contextPath }/member/memberLogIn.do',
         		data: {
         			'id': id,
         			'pwd': pwd
@@ -152,7 +152,7 @@ $(document).ready(function() {
         		        alert("아이디 또는 비밀번호가 틀렸습니다.");
         		    } else {
         		        alert(result + "님 로그인");
-        		        location.href = '/memberMVC/index.do';
+        		        location.href = '${pageContext.request.contextPath }/index.do';
         		    }
         		},
         		error: function(xhr, status, error) {
