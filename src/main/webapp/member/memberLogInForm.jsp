@@ -107,7 +107,7 @@ button:hover {
 			<tr align="center">
 		        <td colspan="2" height="20">
 		            <button type="submit" id="logInBtn">로그인</button>
-		            <button type="button" id="joinBtn" onclik="location.href='/memberMVC/memberWriteForm.do'">회원가입</button>
+		            <button type="button" id="joinBtn" onclick="location.href='${pageContext.request.contextPath }/member/memberWriteForm.do'">회원가입</button>
 		        </td>
 		    </tr>		    
 		</table>

@@ -13,7 +13,7 @@
         var status = '${status}';
 
         if (status === 'success') {
-            alert("회원가입에 성공하였습니다.");
+            alert("회원가입 되었습니다.");
             window.location.href = '/memberMVC/index.do';
         } else if (status === 'fail' || status === 'error') {
             alert("회원가입 처리 중 문제가 발생했습니다.");
