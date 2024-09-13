@@ -46,8 +46,10 @@ public class UpdateService implements CommandProcess {
 		MemberDAO memberDAO = MemberDAO.getInstance();
 		boolean result = memberDAO.memberUpdate(memberDTO);
 		
+		
 		// 3. Response
 		if (result) {
+			request.setAttribute("memberDTO", memberDTO);
 			HttpSession session = request.getSession();		
 			session.invalidate();
 			status = "success";
@@ -55,7 +57,7 @@ public class UpdateService implements CommandProcess {
 			status = "fail";
 		}
 		
-		return "/member/memberUpdate.jsp";
+		return "none";
 	}
 
 }

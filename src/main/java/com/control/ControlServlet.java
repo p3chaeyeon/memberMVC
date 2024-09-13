@@ -140,6 +140,8 @@ public class ControlServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		if(view.equals("none")) return; // 귿이 forwarding 처리 필요 없는 페이지는 안가게 한다.
+		
 		// forward
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response); // 제어권 넘기기

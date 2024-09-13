@@ -2,19 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="member.bean.MemberDTO" %>
 <%@ page import="member.dao.MemberDAO" %>
-<%
-    // 세션에서 사용자 ID 가져오기
-    String id = (String)session.getAttribute("memId");
 
-    // 로그인 여부 확인
-    if (id == null) {
-        out.println("<script>alert('로그인이 필요합니다.'); location.href='../login.jsp';</script>");
-        return;
-    }
-    
-    MemberDAO memberDAO = MemberDAO.getInstance(); // DAO 인스턴스 생성
-	MemberDTO memberDTO = memberDAO.getMemberInfo(id); // 회원 정보 가져오기
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -128,7 +116,7 @@ button:hover {
 		    <tr>
 		        <th class="label">아이디</th>
 		        <td class="input">
-		           <input type="text" name="id" id="id" value="<%= memberDTO.getId() %>" readonly />
+		           <input type="text" name="id" id="id" value="${memberDTO.id }" readonly />
 		        </td>
 		    </tr>
 		    <tr>
