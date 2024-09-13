@@ -201,11 +201,12 @@ $(document).ready(function() {
 	                'pwd': $('#pwd').val()
 	            },
 	            dataType: 'text',
-	            success: function(data) {
-	                if (data === "fail") {
+	            success: function(status) {
+	            	console.log("서버 응답:", status);
+	                if (status === "fail") {
 	                	alert("회원탈퇴 실패하였습니다.");
 	                } else {
-	                	alert("회원탈퇴되었습니다.");
+	                	alert("회원탈퇴 되었습니다.");
 	                	location.href='${pageContext.request.contextPath }/index.do';
 	                }
 	            },

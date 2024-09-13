@@ -32,7 +32,7 @@ public class DeleteService implements CommandProcess {
 			status = "fail";
 		}
 		
-		return "/member/memberDelete.jsp";
+		return "none";
 	}
 
 }
