@@ -51,7 +51,7 @@ public class ControlServlet extends HttpServlet {
         try {
         	fin = new FileInputStream(propertyConfig);
         	/** 서블릿을 web.xml 로 등록했을 때 
-        	fin = new FileINputStream(realPath);
+        	fin = new FileInputStream(realFolder);
         	*/
             properties.load(fin);
             System.out.println("properties = "+properties);
